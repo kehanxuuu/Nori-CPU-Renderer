@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<scene>
+	<integrator type="path_mis"/>
+
+	<camera type="perspective">
+		<float name="fov" value="27.7856"/>
+		<transform name="toWorld">
+			<scale value="-1,1,1"/>
+			<lookat target="0, 0.893051, 4.41198" origin="0, 0.919769, 5.41159" up="0, 1, 0"/>
+		</transform>
+
+		<integer name="height" value="600"/>
+		<integer name="width" value="800"/>
+	</camera>
+
+	<sampler type="independent">
+		<integer name="sampleCount" value="128"/>
+	</sampler>
+
+	<mesh type="obj">
+		<string name="filename" value="../model/walls.obj"/>
+
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.725 0.71 0.68"/>
+		</bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="../model/rightwall.obj"/>
+
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.161 0.133 0.427"/>
+		</bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="../model/leftwall.obj"/>
+
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.630 0.065 0.05"/>
+		</bsdf>
+	</mesh>
+
+	<mesh type="sphere">
+		<point name="center" value="0 0.9 0" />
+		<float name="radius" value="0.5" />
+
+		<bsdf type="microfacettransmission">
+			<color name="albedo" value="1 1 1"/>
+			<float name="alpha" value="0.0005"/>
+			<string name="NDF" value="GGX"/>
+			<float name="extIOR" value="1.0"/>
+			<spectrum name="intIOR" value="300 1.0 400 1.05 500 1.1 600 1.15 700 1.2 800 1.25 900 1.3"/>
+		</bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="../model/diamond.obj"/>
+		<transform name="toWorld">
+			<scale value="0.25, 0.25, 0.25"/>
+			<translate value="0, 1.0, 0"/>
+		</transform>
+
+		<bsdf type="microfacettransmission">
+			<color name="albedo" value="1 1 1"/>
+			<float name="alpha" value="0.001"/>
+			<string name="NDF" value="GGX"/>
+			<float name="extIOR" value="1.0"/>
+			<!-- <spectrum name="intIOR" value="300 1.5527702635739 322 1.5458699289209 344 1.5404466868331 366 1.536090527917  388 1.53252773217   410 1.529568767224 432 1.5270784291406 454 1.5249578457324 476 1.5231331738499 498 1.5215482528369 520 1.5201596882463 542 1.5189334783109 564 1.5178426478869 586 1.516865556749  608 1.5159846691816 630 1.5151856452759 652 1.5144566604975 674 1.513787889767 696 1.5131711117948 718 1.5125994024544 740 1.5120668948646 762 1.5115685899969 784 1.5111002059336 806 1.5106580569705 828 1.5102389559626 850 1.5098401349174 872 1.5094591800239 894 1.5090939781792 916 1.5087426727363"/> -->
+			<spectrum name="intIOR" value="300 1.35 500 1.40 700 1.45 900 1.5"/>
+		</bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="../model/light.obj"/>
+
+		<emitter type="area">
+			<color name="radiance" value="15 15 15"/>
+		</emitter>
+	</mesh>
+</scene>

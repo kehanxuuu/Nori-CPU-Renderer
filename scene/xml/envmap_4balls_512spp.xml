@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<scene>
+	<integrator type="path_mis"/>
+
+	<camera type="perspective">
+		<float name="fov" value="27.7856"/>
+		<transform name="toWorld">
+			<scale value="-1,1,1"/>
+			<lookat target="0, 0.893051, 4.41198" origin="0, 0.919769, 5.41159" up="0, 1, 0"/>
+		</transform>
+
+		<integer name="height" value="600"/>
+		<integer name="width" value="800"/>
+	</camera>
+
+	<sampler type="independent">
+		<integer name="sampleCount" value="512"/>
+	</sampler>
+
+	<mesh type="sphere">
+		<point name="center" value="-0.445800 0.332100 0" />
+		<float name="radius" value="0.3263" />
+
+		<bsdf type="mirror"/>
+	</mesh>
+
+	<mesh type="sphere">
+		<point name="center" value="0.445800 0.332100 0" />
+		<float name="radius" value="0.3263" />
+
+		<bsdf type="dielectric"/>
+	</mesh>
+
+	<mesh type="sphere">
+		<point name="center" value="0.445800 1.2 0" />
+		<float name="radius" value="0.3263" />
+
+		<bsdf type="diffuse"/>
+	</mesh>
+
+	<mesh type="sphere">
+		<point name="center" value="-0.445800 1.2 0" />
+		<float name="radius" value="0.3263" />
+
+		<bsdf type="microfacet">
+			<float name="alpha" value="0.1"/>
+			<color name="kd" value="0.9, 0.9, 0.9"/>
+		</bsdf>
+	</mesh>
+
+	<emitter type="environment">
+		<float name="rotationY" value="180"/>
+		<texture type="image_texture_color" name="envmap">
+			<string name="filename" value="../texture/sky.exr"/>
+			<vector name="scale" value="1 -1"/>
+		</texture>
+	</emitter>
+</scene>

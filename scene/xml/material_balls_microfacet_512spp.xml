@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<scene>
+	<integrator type="path_mis"/>
+
+	<camera type="perspective">
+		<float name="fov" value="27.7856"/>
+		<transform name="toWorld">
+			<scale value="-1,1,1"/>
+			<lookat target="0, 0.893051, 4.41198" origin="0, 0.919769, 5.41159" up="0, 1, 0"/>
+		</transform>
+
+		<integer name="height" value="400"/>
+		<integer name="width" value="900"/>
+	</camera>
+
+	<sampler type="independent">
+		<integer name="sampleCount" value="512"/>
+	</sampler>
+
+	<mesh type="sphere">
+		<point name="center" value="-1 1.1 0" />
+		<float name="radius" value="0.2" />
+
+		<bsdf type="microfacet">
+			<color name="albedo" value="5.0,5.0,5.0"/>
+			<string name="NDF" value="Beckmann"/>
+			<boolean name="visibleNormalSampling" value="true" />
+			<float name="alpha" value="0.01"/>
+			<float name="intIOR" value="1.5"/>
+			<float name="extIOR" value="1.0"/>
+			<color name="kd" value="0,0,0"/>
+		</bsdf>
+	</mesh>
+
+	<mesh type="sphere">
+		<point name="center" value="-0.5 1.1 0" />
+		<float name="radius" value="0.2" />
+
+		<bsdf type="microfacet">
+			<color name="albedo" value="5.0,5.0,5.0"/>
+			<string name="NDF" value="Beckmann"/>
+			<boolean name="visibleNormalSampling" value="true" />
+			<float name="alpha" value="0.05"/>
+			<float name="intIOR" value="1.5"/>
+			<float name="extIOR" value="1.0"/>
+			<color name="kd" value="0,0,0"/>
+		</bsdf>
+	</mesh>
+
+	<mesh type="sphere">
+		<point name="center" value="0 1.1 0" />
+		<float name="radius" value="0.2" />
+
+		<bsdf type="microfacet">
+			<color name="albedo" value="5.0,5.0,5.0"/>
+			<string name="NDF" value="Beckmann"/>
+			<boolean name="visibleNormalSampling" value="true" />
+			<float name="alpha" value="0.15"/>
+			<float name="intIOR" value="1.5"/>
+			<float name="extIOR" value="1.0"/>
+			<color name="kd" value="0,0,0"/>
+		</bsdf>
+	</mesh>
+
+	<mesh type="sphere">
+		<point name="center" value="0.5 1.1 0" />
+		<float name="radius" value="0.2" />
+
+		<bsdf type="microfacet">
+			<color name="albedo" value="5.0,5.0,5.0"/>
+			<string name="NDF" value="Beckmann"/>
+			<boolean name="visibleNormalSampling" value="true" />
+			<float name="alpha" value="0.3"/>
+			<float name="intIOR" value="1.5"/>
+			<float name="extIOR" value="1.0"/>
+			<color name="kd" value="0,0,0"/>
+		</bsdf>
+	</mesh>
+
+	<mesh type="sphere">
+		<point name="center" value="1.0 1.1 0" />
+		<float name="radius" value="0.2" />
+
+		<bsdf type="microfacet">
+			<color name="albedo" value="5.0,5.0,5.0"/>
+			<string name="NDF" value="Beckmann"/>
+			<boolean name="visibleNormalSampling" value="true" />
+			<float name="alpha" value="1.0"/>
+			<float name="intIOR" value="1.5"/>
+			<float name="extIOR" value="1.0"/>
+			<color name="kd" value="0,0,0"/>
+		</bsdf>
+	</mesh>
+
+	<mesh type="sphere">
+		<point name="center" value="-1 0.5 0" />
+		<float name="radius" value="0.2" />
+
+		<bsdf type="microfacet">
+			<color name="albedo" value="5.0,5.0,5.0"/>
+			<string name="NDF" value="Beckmann"/>
+			<boolean name="visibleNormalSampling" value="true" />
+			<float name="alpha" value="0.15"/>
+			<float name="intIOR" value="1.1"/>
+			<float name="extIOR" value="1.0"/>
+			<color name="kd" value="0,0,0"/>
+		</bsdf>
+	</mesh>
+
+	<mesh type="sphere">
+		<point name="center" value="-0.5 0.5 0" />
+		<float name="radius" value="0.2" />
+
+		<bsdf type="microfacet">
+			<color name="albedo" value="5.0,5.0,5.0"/>
+			<string name="NDF" value="Beckmann"/>
+			<boolean name="visibleNormalSampling" value="true" />
+			<float name="alpha" value="0.15"/>
+			<float name="intIOR" value="1.3"/>
+			<float name="extIOR" value="1.0"/>
+			<color name="kd" value="0,0,0"/>
+		</bsdf>
+	</mesh>
+
+	<mesh type="sphere">
+		<point name="center" value="0 0.5 0" />
+		<float name="radius" value="0.2" />
+
+		<bsdf type="microfacet">
+			<color name="albedo" value="5.0,5.0,5.0"/>
+			<string name="NDF" value="Beckmann"/>
+			<boolean name="visibleNormalSampling" value="true" />
+			<float name="alpha" value="0.15"/>
+			<float name="intIOR" value="1.5"/>
+			<float name="extIOR" value="1.0"/>
+			<color name="kd" value="0,0,0"/>
+		</bsdf>
+	</mesh>
+
+	<mesh type="sphere">
+		<point name="center" value="0.5 0.5 0" />
+		<float name="radius" value="0.2" />
+
+		<bsdf type="microfacet">
+			<color name="albedo" value="5.0,5.0,5.0"/>
+			<string name="NDF" value="Beckmann"/>
+			<boolean name="visibleNormalSampling" value="true" />
+			<float name="alpha" value="0.15"/>
+			<float name="intIOR" value="1.7"/>
+			<float name="extIOR" value="1.0"/>
+			<color name="kd" value="0,0,0"/>
+		</bsdf>
+	</mesh>
+
+	<mesh type="sphere">
+		<point name="center" value="1.0 0.5 0" />
+		<float name="radius" value="0.2" />
+
+		<bsdf type="microfacet">
+			<color name="albedo" value="5.0,5.0,5.0"/>
+			<string name="NDF" value="Beckmann"/>
+			<boolean name="visibleNormalSampling" value="true" />
+			<float name="alpha" value="0.15"/>
+			<float name="intIOR" value="1.9"/>
+			<float name="extIOR" value="1.0"/>
+			<color name="kd" value="0,0,0"/>
+		</bsdf>
+	</mesh>
+
+	<emitter type="environment">
+		<float name="rotationY" value="180"/>
+		<texture type="image_texture_color" name="envmap">
+			<string name="filename" value="../texture/brown_photostudio_02_4k.exr"/>
+			<vector name="scale" value="1 -1"/>
+		</texture>
+	</emitter>
+</scene>

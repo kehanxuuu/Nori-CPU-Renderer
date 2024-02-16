@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<scene>
+	<integrator type="path_mis"/>
+
+	<camera type="perspective">
+		<float name="fov" value="27.7856"/>
+		<transform name="toWorld">
+			<scale value="-1,1,1"/>
+			<lookat target="0, 0.893051, 4.41198" origin="0, 0.919769, 5.41159" up="0, 1, 0"/>
+		</transform>
+
+		<integer name="height" value="600"/>
+		<integer name="width" value="800"/>
+
+		<float name="focalLength" value="6.0"/>
+		<float name="aperture" value="0.15"/>
+
+	</camera>
+
+	<sampler type="independent">
+		<integer name="sampleCount" value="128"/>
+	</sampler>
+
+	<mesh type="obj">
+		<string name="filename" value="../model/walls.obj"/>
+
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.725 0.71 0.68"/>
+		</bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="../model/rightwall.obj"/>
+
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.161 0.133 0.427"/>
+		</bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="../model/leftwall.obj"/>
+
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.630 0.065 0.05"/>
+		</bsdf>
+	</mesh>
+
+	<!-- <mesh type="obj">
+		<string name="filename" value="../model/teapot.obj"/>
+		<transform name="toWorld">
+			<scale value="0.4,0.4,0.4"/>
+			<rotate axis="1,0,0" angle="0"/>
+			<translate value="-0.3,0.2,0"/>
+		</transform>
+
+		<bsdf type="mirror"/>
+	</mesh> -->
+
+	<!-- <mesh type="obj">
+		<string name="filename" value="../model/suzanne.obj"/>
+		<transform name="toWorld">
+			<scale value="0.3,0.3,0.3"/>
+			<rotate axis="1,0,0" angle="0"/>
+			<translate value="0.5,0,-1.1"/>
+		</transform>
+
+		<bsdf type="diffuse">
+			<texture type="image_texture_color" name="albedo">
+				<string name="filename" value="../texture/wallpaper.png"/>
+				<vector name="scale" value="1 1"/>
+				<vector name="delta" value="0 0"/>
+			</texture>
+		</bsdf>
+	</mesh> -->
+
+	<mesh type="sphere">
+		<point name="center" value="-0.421400 0.332100 0.4" />
+		<float name="radius" value="0.3263" />
+
+		<bsdf type="diffuse">
+			<texture type="image_texture_color" name="albedo">
+				<string name="filename" value="../texture/wallpaper.png"/>
+				<vector name="scale" value="1 1"/>
+				<vector name="delta" value="0 0"/>
+			</texture>
+		</bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="../model/lucy.obj"/>
+		<transform name="toWorld">
+			<scale value="0.0008, 0.0008, 0.0008"/>
+			<rotate axis="1,0,0" angle="-90"/>
+			<rotate axis="0,1,0" angle="180"/>
+			<translate value="1,0.48,-0.4"/>
+		</transform>
+
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.725 0.71 0.68"/>
+		</bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="../model/light.obj"/>
+
+		<emitter type="area">
+			<color name="radiance" value="15 15 15"/>
+		</emitter>
+	</mesh>
+
+	<emitter type="point">
+		<point name="position" value = "0,1.0,1.5"/>
+		<color name="power" value="4, 4, 4"/>
+	</emitter>
+
+</scene>

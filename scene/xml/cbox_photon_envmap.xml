@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<scene>
+	<integrator type="photonmapper">
+		<integer name="photonCount" value="500000"/>
+		<float name="photonRadius" value="0"/>
+		<integer name="causticPhotonCount" value="5000"/>
+		<float name="causticPhotonRadius" value="0"/>
+		<integer name="finalGatherSamples" value="10"/>
+		<float name="gatherAngle" value="10"/>
+		<integer name="numLambdas" value="50"/>
+	</integrator>
+
+	<!-- <integrator type="path_mis"/> -->
+
+	<camera type="perspective">
+		<float name="fov" value="27.7856"/>
+		<transform name="toWorld">
+			<scale value="-1,1,1"/>
+			<lookat target="0, 0.893051, 4.41198" origin="0, 0.919769, 5.41159" up="0, 1, 0"/>
+		</transform>
+
+		<integer name="height" value="600"/>
+		<integer name="width" value="800"/>
+	</camera>
+
+	<sampler type="independent">
+		<integer name="sampleCount" value="128"/>
+	</sampler>
+
+	<!-- <mesh type="obj">
+		<string name="filename" value="../model/walls.obj"/>
+
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.725 0.71 0.68"/>
+		</bsdf>
+	</mesh> -->
+
+	<mesh type="obj">
+		<string name="filename" value="../model/lucy.obj"/>
+		<transform name="toWorld">
+			<scale value="0.0008, 0.0008, 0.0008"/>
+			<rotate axis="1,0,0" angle="-90"/>
+			<rotate axis="0,1,0" angle="180"/>
+			<translate value="1,0.48,-0.4"/>
+		</transform>
+
+		<bsdf type="dielectric"/>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="../model/lucy.obj"/>
+		<transform name="toWorld">
+			<scale value="0.0008, 0.0008, 0.0008"/>
+			<rotate axis="1,0,0" angle="-90"/>
+			<rotate axis="0,1,0" angle="180"/>
+			<translate value="0,0.48,-0.4"/>
+		</transform>
+
+		<bsdf type="diffuse"/>
+	</mesh>
+
+	<emitter type="environment">
+		<float name="rotationX" value="0"/>
+		<float name="rotationY" value="-45"/>
+		<texture type="image_texture_color" name="envmap">
+			<string name="filename" value="../texture/sky.exr"/>
+			<vector name="scale" value="1 -1"/>
+		</texture>
+	</emitter>
+</scene>

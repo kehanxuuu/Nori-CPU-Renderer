@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<scene>
+	<integrator type="volphotonmapper">
+		<float name="photonRadius" value="0.01"/>
+		<integer name="photonCount" value="10000000"/>
+		<integer name="numLambdas" value="10"/>
+	</integrator>
+
+	<camera type="perspective">
+		<float name="fov" value="27.7856"/>
+		<transform name="toWorld">
+			<scale value="-1,1,1"/>
+			<lookat target="0, 0.893051, 4.41198" origin="0, 0.919769, 5.41159" up="0, 1, 0"/>
+		</transform>
+
+		<integer name="height" value="600"/>
+		<integer name="width" value="800"/>
+	</camera>
+
+	<sampler type="independent">
+		<integer name="sampleCount" value="512"/>
+	</sampler>
+
+	<mesh type="obj">
+		<string name="filename" value="../model/walls.obj"/>
+
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.725 0.71 0.68"/>
+		</bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="../model/rightwall.obj"/>
+
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.161 0.133 0.427"/>
+		</bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="../model/leftwall.obj"/>
+
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.630 0.065 0.05"/>
+		</bsdf>
+	</mesh>
+
+	<medium type="heterogeneous">
+		<string name="vdb_path" value="../volume/smoke.vdb"/>
+
+		<string name="transmittance" value="Ratio" />
+
+		<color name="sigma_a" value="0 0 0"/>
+		<color name="sigma_s" value="50 50 50"/>
+		<color name="Le" value="0 0 0"/>
+
+		<point name="BBMin" value="-0.4 0.04 0.1"/>
+		<point name="BBMax" value="0.4 1.56 0.9"/>
+
+		<phase type="isotropic" />
+	</medium>
+
+	<mesh type="obj">
+		<string name="filename" value="../model/light.obj"/>
+
+		<emitter type="area">
+			<color name="radiance" value="15 15 15"/>
+		</emitter>
+	</mesh>
+</scene>

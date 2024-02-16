@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<scene>
+	<integrator type="path_mis"/>
+
+	<camera type="perspective">
+		<float name="fov" value="27.7856"/>
+		<transform name="toWorld">
+			<scale value="-1,1,1"/>
+			<lookat target="0, 0.893051, 4.41198" origin="0, 0.919769, 5.41159" up="0, 1, 0"/>
+		</transform>
+
+		<integer name="height" value="1200"/>
+		<integer name="width" value="1600"/>
+
+		<float name="focalLength" value="5.0"/>
+		<float name="aperture" value="0"/>
+
+	</camera>
+
+	<sampler type="independent">
+		<integer name="sampleCount" value="128"/>
+	</sampler>
+
+	<mesh type="obj">
+		<string name="filename" value="../model/lucy.obj"/>
+		<transform name="toWorld">
+			<scale value="0.0012, 0.0012, 0.0012"/>
+			<rotate axis="1,0,0" angle="-90"/>
+			<rotate axis="0,1,0" angle="180"/>
+			<translate value="0.8,0.48,-0.4"/>
+		</transform>
+
+		<bsdf type="microfacet">
+			<color name="albedo" value="5.0,5.0,5.0"/>
+			<string name="NDF" value="Beckmann"/>
+			<boolean name="visibleNormalSampling" value="true" />
+			<float name="alpha" value="0.05"/>
+			<float name="intIOR" value="1.5"/>
+			<float name="extIOR" value="1.0"/>
+			<color name="kd" value="0,0,0"/>
+		</bsdf>
+	</mesh>
+
+	<emitter type="environment">
+		<float name="rotationY" value="180"/>
+		<texture type="image_texture_color" name="envmap">
+			<string name="filename" value="../texture/sky.exr"/>
+			<vector name="scale" value="1 -1"/>
+		</texture>
+	</emitter>
+
+</scene>
